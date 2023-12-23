@@ -1,0 +1,66 @@
+# Ignore WordPress core files
+wp-admin/
+wp-includes/
+wp-config.php
+
+# Ignore WordPress configuration files
+wp-config-sample.php
+
+# Ignore WordPress specific files and directories
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/wp-cache-config.php
+wp-content/debug.log
+wp-content/.htaccess
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore editor backup files
+*~
+*.swp
+
+# Ignore Node.js-related files
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Ignore build and compiled files
+/dist/
+/build/
+*.min.css
+*.min.js
+
+# Ignore logs and other temporary files
+error_log
+*.log
+
+# Ignore any other theme-specific files or directories
+# Add more rules as needed
+
+# Include the following lines if you use Sass or SCSS
+# Ignore Sass cache files
+.sass-cache/
+*.sass-cache/
+
+# Include the following lines if you use Composer for PHP dependencies
+# Ignore Composer dependencies
+/vendor/
+
+# Include the following lines if you use Grunt or Gulp for task running
+# Ignore Grunt/Gulp build directory
+/node_modules/
+/assets/
+
+# Include the following lines if you use Bower for front-end packages
+# Ignore Bower components
+/bower_components/
