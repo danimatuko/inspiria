@@ -1,0 +1,19 @@
+.swiper-button-prev,
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, -65px);
+  font-size: 2.813rem;
+  color: #e1e1e6;
+
+  &:hover {
+    color: black;
+  }
+
+  &::after {
+    content: '';
+  }
+}
+
+.swiper-button-prev {
+  top: var(--swiper-navigation-top-offset, 65%);
+  left: auto;
+}

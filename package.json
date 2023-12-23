@@ -2,7 +2,7 @@
   "name": "starter-theme",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "npx webpack --watch",
     "build": "webpack --mode production",
     "dev": "webpack --mode development"
   },

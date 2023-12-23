@@ -2,7 +2,7 @@
 <section class="home_banner_area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5"></div>
+            <div class="col-lg-4"></div>
             <div class="col-lg-7">
                 <!-- Slider main container -->
                 <div class="swiper blog_text_slider">
@@ -58,42 +58,13 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-next"><i class="lnr lnr-arrow-right"></i></div>
-                    <div class="swiper-button-prev"><i class="lnr lnr-arrow-left"></i></div>
                 </div>
-
+            </div>
+            <div class="col-lg-1">
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-next"><i class="lnr lnr-arrow-right"></i></div>
+                <div class="swiper-button-prev"><i class="lnr lnr-arrow-left"></i></div>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    .swiper {}
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        font-size: 2.813rem;
-        color: #e1e1e6;
-
-        &:hover {
-            color: black;
-        }
-    }
-
-    .swiper-button-prev {
-        top: var(--swiper-navigation-top-offset, 65%);
-        right: var(--swiper-navigation-sides-offset, 10px);
-        left: auto;
-
-    }
-
-    .swiper-button-next::after {
-        content: '';
-    }
-
-    .swiper-button-prev::after {
-        content: '';
-    }
-</style>
