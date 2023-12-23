@@ -74,7 +74,7 @@
 
     .swiper-button-prev,
     .swiper-button-next {
-        font-size: 1.875rem;
+        font-size: 2.813rem;
         color: #e1e1e6;
 
         &:hover {

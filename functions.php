@@ -38,10 +38,10 @@ class Inspiria {
      */
     public function enqueue_styles() {
         wp_enqueue_style('my-theme-style', get_stylesheet_uri());
-        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css');
+        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css', [], '4.1.3');
         wp_enqueue_style('linearicons', 'https://cdn.linearicons.com/free/1.0.0/icon-font.min.css', array(), null, 'all');
-        // wp_enqueue_style('owl-carousel-style', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.css');
-        wp_enqueue_style('swiper-style', get_template_directory_uri() . '/node_modules/swiper/swiper-bundle.min.css');
+        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css', [], '4.5.0');
+        wp_enqueue_style('swiper-style', get_template_directory_uri() . '/node_modules/swiper/swiper-bundle.min.css', [], '11.0.5');
         wp_enqueue_style('responsive', get_template_directory_uri() . '/dist/responsive.min.css');
         wp_enqueue_style('custom-style', get_template_directory_uri() . '/dist/main.min.css', array(), '1.0');
     }
