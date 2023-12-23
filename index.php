@@ -11,30 +11,72 @@ get_header(); // Include header.php
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <?php
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                // Include the template part for displaying content
-                get_template_part('template-parts/content', get_post_type());
+        <!--================Blog Area =================-->
+        <section class="blog_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog_left_sidebar">
+                            <?php get_template_part('partials/blog', 'featured') ?>
+                            <div class="row">
+                                <?php get_template_part('partials/blog') ?>
+                                <?php get_template_part('partials/blog') ?>
+                                <?php get_template_part('partials/blog') ?>
+                                <?php get_template_part('partials/blog') ?>
+                            </div>
 
-            endwhile;
+                            <?php get_template_part('partials/blog', 'featured') ?>
 
-            // Pagination
-            the_posts_pagination();
 
-        else :
-            // If no content, include the "No posts found" template
-            get_template_part('template-parts/content', 'none');
+                            <div class="row">
+                                <?php get_template_part('partials/blog') ?>
+                                <?php get_template_part('partials/blog') ?>
 
-        endif;
-        ?>
+                            </div>
+                            <div class="row">
+                                <?php get_template_part('partials/blog') ?>
+                                <?php get_template_part('partials/blog') ?>
+
+                            </div>
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Previous">
+                                            <span aria-hidden="true">
+                                                <span class="lnr lnr-chevron-left"></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a href="#" class="page-link">01</a></li>
+                                    <li class="page-item active"><a href="#" class="page-link">02</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">03</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">04</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">09</a></li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Next">
+                                            <span aria-hidden="true">
+                                                <span class="lnr lnr-chevron-right"></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <?php
+                        // Include sidebar.php
+                        get_sidebar();
+                        ?>
+
+                    </div>
+                </div>
+        </section>
     </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php
 
-// Include sidebar.php
-//get_sidebar(); 
+
 
 get_footer();

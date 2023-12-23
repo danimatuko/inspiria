@@ -6,8 +6,7 @@
                 <div class="blog_left_sidebar">
                     <article class="blog_style1">
                         <div class="blog_img">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-1.jpg" alt="">
+                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-1.jpg" alt="">
                         </div>
                         <div class="blog_text">
                             <div class="blog_text_inner">
@@ -30,9 +29,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-1.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-1.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -55,9 +52,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-2.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-2.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -80,8 +75,7 @@
                     </div>
                     <article class="blog_style1">
                         <div class="blog_img">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-2.jpg" alt="">
+                            <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-2.jpg" alt="">
                         </div>
                         <div class="blog_text">
                             <div class="blog_text_inner">
@@ -104,9 +98,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-3.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-3.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -129,9 +121,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-4.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-4.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -156,9 +146,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-5.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-5.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -181,9 +169,7 @@
                         <div class="col-md-6">
                             <article class="blog_style1 small">
                                 <div class="blog_img">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-6.jpg"
-                                        alt="">
+                                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/home-blog/blog-small-6.jpg" alt="">
                                 </div>
                                 <div class="blog_text">
                                     <div class="blog_text_inner">
@@ -241,8 +227,7 @@
                         <div class="br"></div>
                     </aside>
                     <aside class="single_sidebar_widget author_widget">
-                        <img class="author_img img-fluid"
-                            src="<?php echo get_template_directory_uri(); ?>/src/img/blog/author.png" alt="">
+                        <img class="author_img img-fluid" src="<?php echo get_template_directory_uri(); ?>/src/img/blog/author.png" alt="">
                         <h4>Charlie Barber</h4>
                         <p>Senior blog writer</p>
                         <p>Boot camps have its supporters and its detractors. Some people do not understand why you
@@ -259,8 +244,7 @@
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Popular Posts</h3>
                         <div class="media post_item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post1.jpg"
-                                alt="post">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post1.jpg" alt="post">
                             <div class="media-body">
                                 <a href="blog-details.html">
                                     <h3>Space The Final Frontier</h3>
@@ -269,8 +253,7 @@
                             </div>
                         </div>
                         <div class="media post_item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post2.jpg"
-                                alt="post">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post2.jpg" alt="post">
                             <div class="media-body">
                                 <a href="blog-details.html">
                                     <h3>The Amazing Hubble</h3>blog_left_sidebar
@@ -279,8 +262,7 @@
                             </div>
                         </div>
                         <div class="media post_item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post3.jpg"
-                                alt="post">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post3.jpg" alt="post">
                             <div class="media-body">
                                 <a href="blog-details.html">
                                     <h3>Astronomy Or Astrology</h3>
@@ -289,8 +271,7 @@
                             </div>
                         </div>
                         <div class="media post_item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post4.jpg"
-                                alt="post">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/blog/popular-post/post4.jpg" alt="post">
                             <div class="media-body">
                                 <a href="blog-details.html">
                                     <h3>Asteroids telescope</h3>
@@ -304,9 +285,7 @@
                         <h4 class="widget_title">Newsletter</h4>
                         <div class="form-group d-flex flex-row">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="inlineFormInputGroup"
-                                    placeholder="Enter email" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = 'Enter email'">
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
                             </div>
                             <a href="#" class="bbtns"><i class="lnr lnr-arrow-right"></i></a>
                         </div>

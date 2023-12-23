@@ -8,7 +8,7 @@
 
 get_header(); // Include header.php
 get_header('slider');
-get_template_part('paritals/content', 'blog');
+get_template_part('partials/content', 'blog');
 ?>
 
 

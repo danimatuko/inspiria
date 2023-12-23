@@ -26,7 +26,7 @@ class Inspiria {
         add_theme_support('post-thumbnails');
 
         register_nav_menus(array(
-            'primary-menu' => esc_html__('Primary Menu', 'your-theme-textdomain'),
+            'primary-menu' => esc_html__('Primary Menu', 'Inspiria'),
             // Add more menu locations as needed
         ));
     }
@@ -69,7 +69,7 @@ class Inspiria {
         register_sidebar(array(
             'name' => esc_html__('Sidebar Widget Area', 'your-theme-textdomain'),
             'id' => 'sidebar-widget-area',
-            'description' => esc_html__('Add widgets here to appear in the sidebar.', 'your-theme-textdomain'),
+            'description' => esc_html__('Add widgets here to appear in the sidebar.', 'Inspiria'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
