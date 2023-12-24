@@ -20,9 +20,7 @@
                         <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/src/img/logo.png" alt="">
                     </a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -30,12 +28,12 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
                             <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="single-blog.html">Sinlge Blog</a>
                                     </li>

@@ -3,80 +3,56 @@
 /**
  * The main template file.
  *
- * @package Starter
+ * @package Inspiria
  */
 
-get_header(); // Include header.php
+// Include header.php
+get_header();
 ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <!--================Blog Area =================-->
         <section class="blog_area p_120">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
+                <div class="row justify-content-center">
+                    <div class="col">
                         <div class="blog_left_sidebar">
-                            <?php get_template_part('partials/blog', 'featured') ?>
                             <div class="row">
-                                <?php get_template_part('partials/blog') ?>
-                                <?php get_template_part('partials/blog') ?>
-                                <?php get_template_part('partials/blog') ?>
-                                <?php get_template_part('partials/blog') ?>
+                                <?php
+                                // Check if there are posts
+                                if (have_posts()) :
+                                    // Start the loop
+                                    while (have_posts()) : the_post();
+                                ?>
+                                <div class="col-lg-4 my-5">
+                                    <?php
+                                            // Include the blog post content template
+                                            get_template_part('partials/blog');
+                                            ?>
+                                </div>
+                                <?php
+                                    // End the loop
+                                    endwhile;
+                                    ?>
+                            </div><!-- .row -->
+
+                            <div class="row">
+                                <?php get_template_part('partials/pagination'); ?>
                             </div>
 
-                            <?php get_template_part('partials/blog', 'featured') ?>
-
-
-                            <div class="row">
-                                <?php get_template_part('partials/blog') ?>
-                                <?php get_template_part('partials/blog') ?>
-
-                            </div>
-                            <div class="row">
-                                <?php get_template_part('partials/blog') ?>
-                                <?php get_template_part('partials/blog') ?>
-
-                            </div>
-                            <nav class="blog-pagination justify-content-center d-flex">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Previous">
-                                            <span aria-hidden="true">
-                                                <span class="lnr lnr-chevron-left"></span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a href="#" class="page-link">01</a></li>
-                                    <li class="page-item active"><a href="#" class="page-link">02</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">03</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">04</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">09</a></li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Next">
-                                            <span aria-hidden="true">
-                                                <span class="lnr lnr-chevron-right"></span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <?php
-                        // Include sidebar.php
-                        get_sidebar();
-                        ?>
-
-                    </div>
-                </div>
-        </section>
+                            <?php else : ?>
+                            <!-- If no posts found -->
+                            <p><?php esc_html_e('No posts found', 'inspiria'); ?></p>
+                            <?php endif; ?>
+                        </div><!-- .blog_left_sidebar -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </section><!-- .blog_area -->
     </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php
-
-
-
+// Include footer.php
 get_footer();
+?>
