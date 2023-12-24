@@ -1,23 +1,28 @@
 <nav class="blog-pagination justify-content-center d-flex">
     <ul class="pagination">
+        <?php
+        // Get the total number of pages
+        $total_pages = $wp_query->max_num_pages;
+
+        // Get the current page
+        $current_page = max(1, get_query_var('paged'));
+        ?>
+
+        <!-- Previous page link -->
         <li class="page-item">
-            <a href="#" class="page-link" aria-label="Previous">
-                <span aria-hidden="true">
-                    <span class="lnr lnr-chevron-left"></span>
-                </span>
-            </a>
+            <?= get_previous_posts_link('<span aria-hidden="true"><span class="lnr lnr-chevron-left align-middle"></span></span>'); ?>
         </li>
-        <li class="page-item"><a href="#" class="page-link">01</a></li>
-        <li class="page-item active"><a href="#" class="page-link">02</a></li>
-        <li class="page-item"><a href="#" class="page-link">03</a></li>
-        <li class="page-item"><a href="#" class="page-link">04</a></li>
-        <li class="page-item"><a href="#" class="page-link">09</a></li>
+
+        <!-- Page links -->
+        <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
+            <li class="page-item <?= ($current_page == $i ? 'active' : ''); ?>">
+                <a href="<?= esc_url(get_pagenum_link($i)); ?>" class="page-link"><?= $i; ?></a>
+            </li>
+        <?php endfor; ?>
+
+        <!-- Next page link -->
         <li class="page-item">
-            <a href="#" class="page-link" aria-label="Next">
-                <span aria-hidden="true">
-                    <span class="lnr lnr-chevron-right"></span>
-                </span>
-            </a>
+            <?= get_next_posts_link('<span aria-hidden="true"><span class="lnr lnr-chevron-right align-middle"></span></span>', $total_pages); ?>
         </li>
     </ul>
 </nav>
