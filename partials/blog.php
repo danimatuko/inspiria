@@ -26,7 +26,7 @@
 
 
     <style>
-        .cat .cat_btn {
-            width: fit-content !important;
-        }
+.cat .cat_btn {
+    width: fit-content !important;
+}
     </style>

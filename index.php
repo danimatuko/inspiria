@@ -6,8 +6,8 @@
  * @package Inspiria
  */
 
-// Include header.php
 get_header();
+get_header('inner');
 ?>
 
 <div id="primary" class="content-area">
@@ -24,13 +24,13 @@ get_header();
                                     // Start the loop
                                     while (have_posts()) : the_post();
                                 ?>
-                                <div class="col-lg-4 my-5">
-                                    <?php
+                                        <div class="col-lg-4 my-5">
+                                            <?php
                                             // Include the blog post content template
                                             get_template_part('partials/blog');
                                             ?>
-                                </div>
-                                <?php
+                                        </div>
+                                    <?php
                                     // End the loop
                                     endwhile;
                                     ?>
@@ -40,10 +40,10 @@ get_header();
                                 <?php get_template_part('partials/pagination'); ?>
                             </div>
 
-                            <?php else : ?>
+                        <?php else : ?>
                             <!-- If no posts found -->
                             <p><?php esc_html_e('No posts found', 'inspiria'); ?></p>
-                            <?php endif; ?>
+                        <?php endif; ?>
                         </div><!-- .blog_left_sidebar -->
                     </div><!-- .col -->
                 </div><!-- .row -->
