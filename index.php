@@ -36,7 +36,7 @@ get_header('inner');
                                     ?>
                             </div><!-- .row -->
 
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 <?php get_template_part('partials/pagination'); ?>
                             </div>
 

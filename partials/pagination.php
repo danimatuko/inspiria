@@ -15,9 +15,9 @@
 
         <!-- Page links -->
         <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-            <li class="page-item <?= ($current_page == $i ? 'active' : ''); ?>">
-                <a href="<?= esc_url(get_pagenum_link($i)); ?>" class="page-link"><?= $i; ?></a>
-            </li>
+        <li class="page-item <?= ($current_page == $i ? 'active' : ''); ?>">
+            <a href="<?= esc_url(get_pagenum_link($i)); ?>" class="page-link"><?= $i; ?></a>
+        </li>
         <?php endfor; ?>
 
         <!-- Next page link -->

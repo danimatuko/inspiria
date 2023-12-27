@@ -3,23 +3,43 @@
 /**
  * The main template file.
  *
+ * This file serves as the main entry point for rendering the website's content.
+ * It includes the header, slider, recent posts, most commented posts, sidebar, and footer.
+ *
  * @package Inspiria
  */
 
-get_header(); // Include header.php
+
+// Include headers
+get_header();
 get_header('slider');
-get_template_part('partials/content', 'blog');
+
 ?>
 
+<section class="blog_area p_120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog_left_sidebar">
 
+                    <?php
+                    // Include recent posts section
+                    get_template_part('partials/blog', 'recent-posts');
 
+                    // Include most commented posts section
+                    get_template_part('partials/blog', 'most-comments');
+                    ?>
 
-
-
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <?php get_sidebar(); // Include sidebar 
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
-
-// Include sidebar.php
-//get_sidebar(); 
-
-get_footer();
+get_footer(); // Include footer.php
+?>
