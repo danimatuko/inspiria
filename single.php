@@ -1,58 +1,158 @@
 <?php
-get_header(); // Include header.php
+
+/**
+ * The main template file.
+ *
+ * This file serves as the main entry point for rendering the website's content.
+ * It includes the header, slider, recent posts, most commented posts, sidebar, and footer.
+ *
+ * @package Inspiria
+ */
+
+// Include headers
+get_header();
+get_header('slider');
+
 ?>
 
-<div id="content" class="site-content">
+<section class="blog_area p_120 single-post-area">
     <div class="container">
-        <main id="main" class="site-main">
-            <?php
-            if (have_posts()) :
-                while (have_posts()) :
-                    the_post();
-            ?>
-
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <header class="entry-header">
-                            <h1 class="entry-title"><?php the_title(); ?></h1>
-                            <div class="entry-meta">
-                                <span class="posted-on">
+        <div class="row">
+            <div class="col-lg-8">
+                <?php
+                if (have_posts()) :
+                    while (have_posts()) : the_post();
+                ?>
+                        <div <?php post_class("main_blog_details"); ?>>
+                            <?php if (has_post_thumbnail()) : ?>
+                                <img class="img-fluid" src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="">
+                            <?php endif; ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <h4><?php the_title(); ?></h4>
+                            </a>
+                            <div class="user_details">
+                                <div class="float-left">
                                     <?php
-                                    printf(
-                                        esc_html__('Posted on %s', 'your-theme-textdomain'),
-                                        '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_date()) . '</a>'
-                                    );
+                                    $categories = get_the_category();
+                                    foreach ($categories as $category) {
+                                        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                                    }
                                     ?>
-                                </span>
+                                </div>
+                                <div class="float-right">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h5><?php the_author(); ?></h5>
+                                            <p><?php the_date(); ?></p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <?php echo get_avatar(get_the_author_meta('ID'), 50); ?>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </header>
-
-                        <div class="entry-content">
                             <?php the_content(); ?>
+                            <div class="news_d_footer">
+                                <a href="#"><i class="lnr lnr lnr-heart"></i>Lily and 4 people like this</a>
+                                <a class="justify-content-center ml-auto" href="#"><i class="lnr lnr lnr-bubble"></i><?php comments_number('0 Comments', '1 Comment', '% Comments'); ?></a>
+                                <div class="news_socail ml-auto">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-rss"></i></a>
+                                </div>
+                            </div>
                         </div>
 
-                        <footer class="entry-footer">
-                            <?php
-                            if (comments_open() || get_comments_number()) :
-                                comments_template();
-                            endif;
-                            ?>
-                        </footer>
-                    </article>
+                <?php
+                    endwhile;
+                endif;
+                ?>
+
+
+
+                <div class="navigation-area">
+                    <div class="row">
+                        <?php
+                        $prev_post = get_adjacent_post(false, '', true);
+                        if ($prev_post) :
+                        ?>
+                            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                                <div class="thumb">
+                                    <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>">
+                                        <?php
+                                        $prev_thumbnail_url = get_the_post_thumbnail_url($prev_post->ID, 'small');
+                                        if ($prev_thumbnail_url) {
+                                            echo '<img class="img-fluid" src="' . esc_url($prev_thumbnail_url) . '" alt="">';
+                                        } else {
+                                            echo '<img class="img-fluid" src="' . get_template_directory_uri() . '/src/img/blog/prev.jpg" alt="">';
+                                        }
+                                        ?>
+                                    </a>
+                                </div>
+
+
+                                <div class="arrow">
+                                    <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>"><span class="lnr text-white lnr-arrow-left"></span></a>
+                                </div>
+                                <div class="detials">
+                                    <p>Prev Post</p>
+                                    <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>">
+                                        <h4><?php echo esc_html(get_the_title($prev_post->ID)); ?></h4>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php
+                        $next_post = get_adjacent_post(false, '', false);
+                        if ($next_post) :
+                        ?>
+                            <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                                <div class="detials">
+                                    <p>Next Post</p>
+                                    <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
+                                        <h4><?php echo esc_html(get_the_title($next_post->ID)); ?></h4>
+                                    </a>
+                                </div>
+                                <div class="arrow">
+                                    <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>"><span class="lnr text-white lnr-arrow-right"></span></a>
+                                </div>
+                                <div class="thumb">
+                                    <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
+                                        <?php
+                                        if (has_post_thumbnail($next_post->ID)) {
+                                            echo get_the_post_thumbnail($next_post->ID, 'small', array('class' => 'img-fluid'));
+                                        } else {
+                                            echo '<img class="img-fluid" src="' . get_template_directory_uri() . '/src/img/blog/next.jpg" alt="">';
+                                        }
+                                        ?>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+
+
+
 
                 <?php
-                endwhile;
-            else :
+                // Include comments template
+                // comments_template();
                 ?>
-                <p><?php _e('Sorry, no posts were found.', 'your-theme-textdomain'); ?></p>
-            <?php
-            endif;
-            ?>
-        </main>
 
-        <?php get_sidebar(); // Include sidebar.php 
-        ?>
+            </div>
+            <div class="col-lg-4">
+                <?php get_sidebar(); // Include sidebar 
+                ?>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
 <?php
 get_footer(); // Include footer.php
+?>

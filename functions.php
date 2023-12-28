@@ -25,6 +25,9 @@ class Inspiria {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
 
+        // Add custom image sizes
+        add_image_size('small', 60, 60, true);
+
         register_nav_menus(array(
             'primary-menu' => esc_html__('Primary Menu', 'Inspiria'),
             // Add more menu locations as needed

@@ -29,7 +29,7 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].min.css', // Specify the output file for the extracted CSS
+      filename: '[name].min.css',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
