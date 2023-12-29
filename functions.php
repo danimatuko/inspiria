@@ -24,6 +24,7 @@ class Inspiria {
     public function theme_setup() {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
+        add_theme_support('comments');
 
         // Add custom image sizes
         add_image_size('small', 60, 60, true);
@@ -48,6 +49,7 @@ class Inspiria {
         wp_enqueue_style('responsive', get_template_directory_uri() . '/dist/responsive.min.css');
         wp_enqueue_style('custom-style', get_template_directory_uri() . '/dist/main.min.css', array(), '1.0');
     }
+
     /**
      * Enqueue scripts
      *
@@ -67,7 +69,6 @@ class Inspiria {
      *
      * Register the sidebar widget area.
      */
-
     public function register_widget_areas() {
         register_sidebar(array(
             'name' => esc_html__('Sidebar Widget Area', 'your-theme-textdomain'),
@@ -79,7 +80,18 @@ class Inspiria {
             'after_title' => '</h2>',
         ));
     }
+
+
+    /**
+     * Include files
+     *
+     * Include additional files as needed.
+     */
+    public static function include_files() {
+        require get_template_directory() . '/inc/custom_comments_template.php';
+    }
 }
 
 // Instantiate the Inspiria class
-$my_theme = new Inspiria();
+new Inspiria();
+Inspiria::include_files();
