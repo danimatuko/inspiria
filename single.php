@@ -11,7 +11,7 @@
 
 // Include headers
 get_header();
-get_header('slider');
+get_header('inner');
 ?>
 
 <section class="blog_area p_120 single-post-area">

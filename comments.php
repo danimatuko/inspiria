@@ -27,5 +27,8 @@ if (have_comments()) :
 endif;
 ?>
 
+
+
 <?php
+
 comment_form();

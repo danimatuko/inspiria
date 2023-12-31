@@ -10,10 +10,39 @@ class Inspiria {
      * Constructor method to initialize theme setup
      */
     public function __construct() {
+        $this->setup_actions();
+        $this->setup_filters();
+    }
+
+    /**
+     * Setup actions
+     */
+    private function setup_actions() {
         add_action('after_setup_theme', array($this, 'theme_setup'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_action('widgets_init', array($this, 'register_widget_areas'));
+    }
+
+
+
+    /**
+     * Include files
+     *
+     * Include additional files as needed.
+     */
+    public static function include_files() {
+        require get_template_directory() . '/inc/custom_comments_template.php';
+        require get_template_directory() . '/inc/filters/inspiria_comment_form.php';
+    }
+
+
+    /**
+     * Setup filters
+     */
+    private function setup_filters() {
+        // Add any filters here if needed
+        add_filter('comment_form_defaults', 'inspiria_comment_form');
     }
 
     /**
@@ -79,16 +108,6 @@ class Inspiria {
             'before_title' => '<h2 class="widget-title">',
             'after_title' => '</h2>',
         ));
-    }
-
-
-    /**
-     * Include files
-     *
-     * Include additional files as needed.
-     */
-    public static function include_files() {
-        require get_template_directory() . '/inc/custom_comments_template.php';
     }
 }
 
