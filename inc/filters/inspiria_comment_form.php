@@ -1,12 +1,14 @@
 <?php
 
-
 /**
  * Customize the comment form.
+ * 
+ * @see https://developer.wordpress.org/reference/hooks/comment_form_fields/
  *
  * @param array $defaults Default comment form arguments.
  *
  * @return array Modified comment form arguments.
+ * 
  */
 function inspiria_comment_form($defaults) {
     // Remove the default email and URL fields
@@ -19,6 +21,12 @@ function inspiria_comment_form($defaults) {
 
     // Customize the form title
     $defaults['title_reply'] = '<h2 class="h4 text-dark">Leave a Reply</h2>';
+
+    // Add custom structure for the subject field
+    $defaults['fields']['subject'] = '
+        <div class="form-group">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" onfocus="this.placeholder = \'\'" onblur="this.placeholder = \'Subject\'">
+        </div>';
 
     // Add custom structure for the author and email fields in the desired order
     $defaults['fields']['author'] = '
@@ -34,10 +42,12 @@ function inspiria_comment_form($defaults) {
     // Add custom structure for the comment field
     $defaults['comment_field'] = '
         <div class="form-group">
-            <textarea class="form-control mb-10" rows="5" name="comment" placeholder="Message" onfocus="this.placeholder = \'\'" onblur="this.placeholder = \'Message\'" required=""></textarea>
+            <textarea class="form-control mb-10" rows="5" name="dani" placeholder="Message" onfocus="this.placeholder = \'\'" onblur="this.placeholder = \'Message\'" required=""></textarea>
         </div>';
 
-    $defaults['comment_notes_after'] = '';
+    // Add custom structure for the comment note before
+    $defaults['comment_notes_before'] = '<p class="mb-2">Your email address will not be published.</p>';
+    // $defaults['comment_notes_after'] = '';
     $defaults['class_submit'] = 'primary-btn submit_btn mt-3';
     $defaults['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>';
 

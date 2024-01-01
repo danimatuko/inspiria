@@ -34,6 +34,7 @@ class Inspiria {
     public static function include_files() {
         require get_template_directory() . '/inc/custom_comments_template.php';
         require get_template_directory() . '/inc/filters/inspiria_comment_form.php';
+        require get_template_directory() . '/inc/filters/inspiria_comment_fields_order.php';
     }
 
 
@@ -43,6 +44,7 @@ class Inspiria {
     private function setup_filters() {
         // Add any filters here if needed
         add_filter('comment_form_defaults', 'inspiria_comment_form');
+        add_filter('comment_form_fields', 'inspiria_comment_fields_order');
     }
 
     /**
