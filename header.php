@@ -29,22 +29,15 @@
                     </button>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/category/classic">Category</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/archive">Archive</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="/hello-world">Sinlge Blog</a>
-                                    </li>
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary-menu',
+                            'menu_class'     => 'nav',
+                            // 'depth'         => 3,
+                            'walker'         => new InspiriaMenuWalker(),
+
+                        ));
+                        ?>
                         <ul class="nav navbar-nav navbar-right header_social ml-auto">
                             <li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li class="nav-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -61,3 +54,24 @@
             </div>
         </div>
     </header>
+
+
+    <!-- 
+
+
+      <ul class="nav navbar-nav menu_nav">
+                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/category/classic">Category</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/archive">Archive</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/hello-world">Sinlge Blog</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                        </ul>
+     -->

@@ -36,7 +36,7 @@ class Inspiria {
         require get_template_directory() . '/inc/filters/inspiria_comment_form.php';
         require get_template_directory() . '/inc/filters/inspiria_comment_fields_order.php';
         // Include Bootstrap Navwalker
-        require get_template_directory() . '/inc/InspiriaNavWalker.php';
+        require get_template_directory() . '/inc/InspiriaMenuWalker.php';
     }
 
 
