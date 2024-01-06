@@ -6,12 +6,28 @@
  * This class handles the setup and functionality of the theme.
  */
 class Inspiria {
+    private static $instance;
+
     /**
-     * Constructor method to initialize theme setup
+     * Get the single instance of the class
+     *
+     * @return Inspiria
      */
-    public function __construct() {
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * Private constructor to prevent creating multiple instances.
+     */
+    private function __construct() {
         $this->setup_actions();
         $this->setup_filters();
+        $this->include_files();
     }
 
     /**
@@ -24,21 +40,18 @@ class Inspiria {
         add_action('widgets_init', array($this, 'register_widget_areas'));
     }
 
-
-
     /**
      * Include files
      *
      * Include additional files as needed.
      */
-    public static function include_files() {
+    private function include_files() {
         require get_template_directory() . '/inc/custom_comments_template.php';
         require get_template_directory() . '/inc/filters/inspiria_comment_form.php';
         require get_template_directory() . '/inc/filters/inspiria_comment_fields_order.php';
         // Include Bootstrap Navwalker
         require get_template_directory() . '/inc/InspiriaMenuWalker.php';
     }
-
 
     /**
      * Setup filters
@@ -68,6 +81,7 @@ class Inspiria {
         ));
     }
 
+
     /**
      * Enqueue styles
      *
@@ -92,8 +106,6 @@ class Inspiria {
         // Enqueue jQuery from the WordPress core
         // wp_enqueue_script('jquery');
         wp_enqueue_script('swiper-script', get_template_directory_uri() . '/node_modules/swiper/swiper-bundle.min.js');
-
-        // wp_enqueue_script('owl-carousel-script', get_template_directory_uri() . '/node_modules/owl.carousel/src/js/owl.carousel.js');
         wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/main.min.js', array('jquery'), '1.0', true);
     }
 
@@ -115,6 +127,6 @@ class Inspiria {
     }
 }
 
-// Instantiate the Inspiria class
-new Inspiria();
-Inspiria::include_files();
+
+// Instantiate the Inspiria class using the singleton pattern
+Inspiria::get_instance();
