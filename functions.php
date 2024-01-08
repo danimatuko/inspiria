@@ -51,6 +51,8 @@ class Inspiria {
         require get_template_directory() . '/inc/filters/inspiria_comment_fields_order.php';
         // Include Bootstrap Navwalker
         require get_template_directory() . '/inc/InspiriaMenuWalker.php';
+        require get_template_directory() . '/inc/customizer/footer-settings.php';
+        require get_template_directory() . '/inc/widgets/footer-widgets.php';
     }
 
     /**
@@ -71,6 +73,7 @@ class Inspiria {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         add_theme_support('comments');
+        add_theme_support('customize-selective-refresh-widgets');
 
         // Add custom image sizes
         add_image_size('small', 60, 60, true);
