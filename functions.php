@@ -133,3 +133,4 @@ class Inspiria {
 
 // Instantiate the Inspiria class using the singleton pattern
 Inspiria::get_instance();
+require get_template_directory() . '/inc/widgets/SubscribeWidget.php';
